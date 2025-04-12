@@ -1,0 +1,23 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>AI 일본어 튜터</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <h1>일본어 진단 테스트</h1>
+  <form method="POST">
+    {% for q in questions %}
+      <div class="question">
+        <p><strong>[{{ q.type }}]</strong> {{ q.question }}</p>
+        {% for opt in q.options %}
+          <label><input type="radio" name="{{ q.id }}" value="{{ opt }}" required> {{ opt }}</label><br>
+        {% endfor %}
+      </div>
+    {% endfor %}
+    <button type="submit">제출</button>
+  </form>
+</body>
+</html>

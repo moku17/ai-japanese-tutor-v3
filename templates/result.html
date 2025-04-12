@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>결과</title>
+</head>
+<body>
+  <h2>진단 결과</h2>
+  <p>총 {{ total }}문제 중 {{ score }}문제 정답</p>
+
+  <h3>틀린 영역:</h3>
+  {% if weaknesses %}
+    <ul>
+    {% for w in weaknesses %}
+      <li>{{ w }}</li>
+    {% endfor %}
+    </ul>
+  {% else %}
+    <p>모든 영역에서 우수합니다!</p>
+  {% endif %}
+
+  <h3>문제별 피드백</h3>
+  <ul>
+    {% for r in result %}
+      <li>
+        <strong>{{ r.question }}</strong><br>
+        너의 답: {{ r.user_ans }} / 정답: {{ r.correct_ans }}
+        {% if r.correct %}
+          ✅
+        {% else %}
+          ❌<br>
+          <em>GPT 해설:</em> {{ r.explanation }}
+        {% endif %}
+        <br><br>
+      </li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
