@@ -1,3 +1,41 @@
+🇺🇸eng
+
+# AI Japanese Tutor
+
+This is a web application for learning Japanese for Korean users.
+It randomly presents problems in the areas of grammar, reading, vocabulary, and kanji, and analyzes the user's correct answer rate and weaknesses to suggest a learning direction.
+
+## Key Features
+
+- 2 questions each from grammar, reading comprehension, vocabulary, and Chinese characters (8 questions total)
+- Correct answer rate and weak area analysis
+- Simple web UI based
+- Includes commentary function (some automatic commentary available)
+
+## How to run
+
+1. After cloning the project, install the required packages.
+2. The commentary feature is enabled by creating a `.env` file and entering your OpenAI API key.
+3. After running it with the `python app.py` command, you can use it by accessing `http://127.0.0.1:5000` in your browser.
+
+## Technology used
+
+- Python (Flask)
+- HTML, CSS
+- Problem structure based on JSON data
+
+## Folder organization
+
+- `app.py`: Server execution main file
+- `templates/`: Problem and Results Page Template
+- `data/problems.json`: Problem Data Repository
+- `static/style.css`: Basic style file
+
+
+
+
+🇰🇷kor
+
 # AI 일본어 튜터
 
 한국어 사용자를 위한 일본어 학습용 웹 애플리케이션입니다.  
